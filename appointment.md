@@ -29,6 +29,6 @@ Once in the login page we can try some default credentials to see if we can gain
 
 ## Foothold
 
-However, if we try to perfom an sql injection in the username field by typing `admin'#` along with any text in the password field we gain access to the flag. This vulnerability can be found by utilizing the knowledge discussed in the previous questions in the machine.
+However, if we try to perfom an sql injection in the username field by typing `admin'#` along with any text in the password field we gain access to the flag. This vulnerability can be found by utilizing the knowledge discussed in the previous questions in the machine. The `'#` part of the username used in order to get the flag comes to be since in SQL the `#` is read as a comment meaning that anythin beyond it within that line is ommited to the query thus invalidating the password field of the query and granting us access as the administrator. The `'` part of the line simply closes the query statement up to that point, this is how the machine's flag was obtained.
 
 ![Flag](assets/Flag.png)

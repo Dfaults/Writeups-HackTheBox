@@ -48,7 +48,7 @@ root user
 
 ## Recon
 
-When running nmap to see what services were running on the machines open ports we found that it was running a mysql instance on port 3306, we also found mariaDB running and where we will try to gain our initial access into the box by using the root user which doesn't need a password.
+When running nmap to see what services were running on the machines open ports we found a mysql instance on port 3306, we also found MariaDB running and where we will try to gain our initial access into the box by using the root user which doesn't need a password.
 
 ```sh
 # Nmap 7.92 scan initiated Sun May  8 16:02:41 2022 as: nmap -sV -sC -Pn -oA nmap-sequel 10.129.93.199
@@ -85,3 +85,11 @@ There is no web login to be founld so we must attempt to gain access via termina
 Then you have to use the flags in order to connect to the database using the -h {machine **IP**} and -u {user in this case **root**}. Once you gain acces you can use the \h command in order to orient yourself on which commands you have available in the database. Now we try to see what databases are currently in the server and their tables
 
 ![Databases](assets/Databases.png)
+
+Using the **htb** database we see that there are two tables we case utilize to find our flag
+
+![Tables](assets/Tables.png)
+
+Once here all that's left is to check each table one by one in order to find the flag we're looking for which can be found in the **config** table which we can copy and submit over to HackTheBox completing this box.
+
+![Flag Table](assets/Flag-Table.png)  
