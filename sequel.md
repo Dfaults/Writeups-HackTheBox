@@ -79,8 +79,9 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 There is no web login to be founld so we must attempt to gain access via terminal using the mysql command.
 
-> 💡**Tip:** If you don't have or are not sure if you have mysql installed on your machine you can always install it via
-> `sudo apt install mysql-common`
+!!! tip
+    If you don't have or are not sure if you have mysql installed on your machine you can always install it via
+    `sudo apt install mysql-common`
 
 Then you have to use the flags in order to connect to the database using the -h {machine **IP**} and -u {user in this case **root**}. Once you gain acces you can use the \h command in order to orient yourself on which commands you have available in the database. Now we try to see what databases are currently in the server and their tables
 
